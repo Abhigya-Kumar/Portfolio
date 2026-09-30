@@ -66,7 +66,7 @@ export default function ProjectDetail({ item, onClose, isDefault }) {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-full object-cover"
+              className={`relative z-10 w-full h-full object-cover transition-transform duration-300 ${item.imageScale || 'scale-110'}`}
               onError={(e) => { e.target.style.display = 'none'; }}
             />
             {/* Fallback placeholder */}

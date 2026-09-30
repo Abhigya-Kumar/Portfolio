@@ -1,14 +1,17 @@
+import tillMotorImg from '../assets/Background+Border.png';
+
 export const experiences = [
   {
     id: 1,
     source: 'experience',
-    role: 'Till Motor Dveoping',
+    role: 'Till Motor Developing',
     company: 'Company Name',
     period: 'Jan 2023 – Present',
     type: 'Full-time',
     description: 'Led the design and development of core product features using human-centered design methodologies.',
     tags: ['Industrial Design', 'UX Research', 'Prototyping'],
-    image: '/images/exp-1.png',
+    image: tillMotorImg,
+    imageScale: 'scale-[1.35]',
   },
   {
     id: 2,
@@ -38,7 +41,7 @@ function ExperienceCard({ exp, onSelect, isActive }) {
         <img
           src={exp.image}
           alt={exp.role}
-          className="w-full h-full object-cover"
+          className={`relative z-10 w-full h-full object-cover transition-transform duration-300 ${exp.imageScale || 'scale-125'}`}
           onError={(e) => { e.target.style.display = 'none'; }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 text-gray-300 pointer-events-none">
